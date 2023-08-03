@@ -41,7 +41,7 @@ function SignUpPage() {
       <label htmlFor="email">이메일</label>
       <input
         type="text"
-        placeholder="아이디를 입력해 주세요"
+        placeholder="이메일을 입력해 주세요"
         data-testid="email-input"
         name="email"
         id="email"

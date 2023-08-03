@@ -13,14 +13,13 @@ function MainNavigation() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/signin" end>
-              Sign In
-            </NavLink>
+            <NavLink to="/signin">Sign In</NavLink>
           </li>
           <li>
-            <NavLink to="/signup" end>
-              Sign Up
-            </NavLink>
+            <NavLink to="/signup">Sign Up</NavLink>
+          </li>
+          <li>
+            <NavLink to="/todo">ToDo</NavLink>
           </li>
         </ul>
       </nav>

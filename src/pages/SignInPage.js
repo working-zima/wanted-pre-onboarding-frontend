@@ -1,12 +1,66 @@
-import React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import * as Api from "../api";
 
 function SignInPage() {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const navigate = useNavigate();
+
+  // input 입력창 텍스트 변경
+  const handleChange = (evt) => {
+    const changedField = evt.target.name;
+    const newValue = evt.target.value;
+    setFormData((currData) => {
+      currData[changedField] = newValue;
+      return { ...currData };
+    });
+  };
+
+  // 로그인
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
+    try {
+      const res = await Api.post(`auth/signin`, { ...formData });
+      const user = res.data;
+      const jwtToken = user.access_token;
+      localStorage.setItem("access_token", jwtToken);
+      navigate("/todo");
+    } catch (err) {
+      console.log("로그인 실패", err);
+    }
+  };
+
   return (
-    <>
-      <input data-testid="email-input" />
-      <input data-testid="password-input" />
-      <button data-testid="signin-button">로그인</button>
-    </>
+    <form>
+      <label htmlFor="email">이메일</label>
+      <input
+        type="text"
+        placeholder="이메일을 입력해 주세요"
+        data-testid="email-input"
+        name="email"
+        id="email"
+        value={formData.email}
+        onChange={handleChange}
+      />
+      <label htmlFor="password">비밀번호</label>
+      <input
+        type="password"
+        placeholder="비밀번호를 입력해 주세요"
+        data-testid="password-input"
+        name="password"
+        id="password"
+        autoComplete="off"
+        value={formData.password}
+        onChange={handleChange}
+      />
+      <button type="submit" data-testid="signin-button" onClick={handleSubmit}>
+        로그인
+      </button>
+    </form>
   );
 }
 
