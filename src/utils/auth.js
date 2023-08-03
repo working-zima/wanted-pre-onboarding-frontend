@@ -8,3 +8,18 @@ export function getAuthToken() {
 export function firstPageLoader() {
   return redirect("/signin");
 }
+
+export function privateLoader() {
+  const token = getAuthToken();
+  if (!!token) {
+    return redirect("/todo");
+  }
+  return null;
+}
+export function publicLoader() {
+  const token = getAuthToken();
+  if (!token) {
+    return redirect("/signin");
+  }
+  return null;
+}
