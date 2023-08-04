@@ -28,4 +28,25 @@ async function post(endpoint, data) {
   });
 }
 
-export { get, post };
+async function put(endpoint, data) {
+  const bodyData = JSON.stringify(data);
+  console.log(`%cPUT 요청: ${devServerUrl + endpoint}`, "color: #059c4b;");
+  console.log(`%cPUT 요청 데이터: ${bodyData}`, "color: #059c4b;");
+  return axios.put(devServerUrl + endpoint, bodyData, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+    },
+  });
+}
+
+async function del(endpoint, params = "") {
+  console.log(`DELETE 요청 ${devServerUrl + endpoint + "/" + params}`);
+  return axios.delete(devServerUrl + endpoint + "/" + params, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+    },
+  });
+}
+
+export { get, post, put, del as delete };

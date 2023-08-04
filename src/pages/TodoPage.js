@@ -25,25 +25,40 @@ function TodoPage() {
   // TodoForm에서 사용될 createTodo 함수를 정의합니다.
   const createTodo = async (text) => {
     try {
-      const response = await Api.post("todos", { todo: text });
-      setTodos([...todos, response.data]);
+      await Api.post("todos", { todo: text });
+      fetchTodos();
     } catch (err) {
       console.error("등록 실패", err);
     }
   };
 
-  const toggleTodo = async (id) => {
+  // checkbox의 체크 유무를 변경합니다.
+  const toggleTodo = async (id, todo, isCompleted) => {
     try {
-      const response = await Api.post();
+      await Api.put(`todos/${id}`, {
+        todo: todo,
+        isCompleted: !isCompleted,
+      });
+      fetchTodos();
     } catch (err) {
-      console.error("체크 실패", err);
+      console.error("체크박스 변경 실패", err);
+    }
+  };
+
+  const deleteTodo = async (todo) => {
+    const id = todo.id;
+    try {
+      await Api.delete(`todos`, id);
+      fetchTodos();
+    } catch (err) {
+      console.error("삭제 실패", err);
     }
   };
 
   return (
     <>
       <TodoForm createTodo={createTodo} />
-      <TodoList todos={todos} toggleTodo={toggleTodo} />
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </>
   );
 }

@@ -1,7 +1,4 @@
-function TodoList({ todos, toggleTodo }) {
-  const handleToggle = () => {
-    toggleTodo(todos.id);
-  };
+function TodoList({ todos, toggleTodo, deleteTodo }) {
   return (
     <div>
       <ul>
@@ -11,12 +8,19 @@ function TodoList({ todos, toggleTodo }) {
               <input
                 type="checkbox"
                 checked={todo.isCompleted}
-                onChange={handleToggle}
+                onChange={() =>
+                  toggleTodo(todo.id, todo.todo, todo.isCompleted)
+                }
               />
               <span>{todo.todo}</span>
             </label>
             <button data-testid="modify-button">수정</button>
-            <button data-testid="delete-button">삭제</button>
+            <button
+              data-testid="delete-button"
+              onClick={() => deleteTodo(todo)}
+            >
+              삭제
+            </button>
           </li>
         ))}
       </ul>
