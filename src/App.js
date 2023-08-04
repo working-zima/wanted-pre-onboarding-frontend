@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
 import ErrorPage from "./pages/Error";
-import ToDoList from "./pages/ToDoList";
+import TodoPage from "./pages/TodoPage";
 import { privateLoader, publicLoader, firstPageLoader } from "./utils/auth";
 
 const router = createBrowserRouter([
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage />, loader: firstPageLoader },
       { path: "signup", element: <SignUpPage />, loader: privateLoader },
       { path: "signin", element: <SignInPage />, loader: privateLoader },
-      { path: "todo", element: <ToDoList />, loader: publicLoader },
+      { path: "todo", element: <TodoPage />, loader: publicLoader },
     ],
   },
 ]);

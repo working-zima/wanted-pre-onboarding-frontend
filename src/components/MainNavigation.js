@@ -19,7 +19,7 @@ function MainNavigation() {
             <NavLink to="/signup">Sign Up</NavLink>
           </li>
           <li>
-            <NavLink to="/todo">ToDo</NavLink>
+            <NavLink to="/todo">Todo</NavLink>
           </li>
         </ul>
       </nav>

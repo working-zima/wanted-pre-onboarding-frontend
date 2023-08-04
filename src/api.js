@@ -12,16 +12,18 @@ async function get(endpoint, params = "") {
 
   return axios.get(devServerUrl + endpoint + "/" + params, {
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+      Authorization: `Bearer ${localStorage.getItem("access_token")}`,
     },
   });
 }
 
 async function post(endpoint, data) {
+  console.log(`POST 요청 ${devServerUrl + endpoint + "/"}`, { data });
   const bodyData = JSON.stringify(data);
   return axios.post(devServerUrl + endpoint, bodyData, {
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("access_token")}`,
     },
   });
 }
