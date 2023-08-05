@@ -56,6 +56,7 @@ function TodoPage() {
     }
   };
 
+  // todo를 수정합니다.
   const updateTodo = async (id, isCompleted, todo) => {
     try {
       await Api.put(`todos/${id}`, {
@@ -67,7 +68,7 @@ function TodoPage() {
   };
 
   return (
-    <>
+    <div>
       <TodoForm createTodo={createTodo} />
       <TodoList
         todos={todos}
@@ -75,7 +76,7 @@ function TodoPage() {
         deleteTodo={deleteTodo}
         updateTodo={updateTodo}
       />
-    </>
+    </div>
   );
 }
 

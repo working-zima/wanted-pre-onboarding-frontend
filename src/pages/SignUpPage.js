@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import * as Api from "../api";
 import { validateEmail, validatePassword } from "../utils/validate";
+import classes from "./SignUpPage.module.css";
 
 function SignUpPage() {
   const [formData, setFormData] = useState({
@@ -39,7 +40,9 @@ function SignUpPage() {
 
   return (
     <form>
-      <label htmlFor="email">이메일</label>
+      <label htmlFor="email" className={classes.label}>
+        이메일
+      </label>
       <input
         type="text"
         placeholder="이메일을 입력해 주세요"
@@ -49,7 +52,9 @@ function SignUpPage() {
         value={formData.email}
         onChange={handleChange}
       />
-      <label htmlFor="password">비밀번호</label>
+      <label htmlFor="password" className={classes.label}>
+        비밀번호
+      </label>
       <input
         type="password"
         placeholder="비밀번호를 입력해 주세요"
@@ -65,6 +70,7 @@ function SignUpPage() {
         data-testid="signup-button"
         disabled={!isFormValid}
         onClick={handleSubmit}
+        className={classes.btn}
       >
         회원가입
       </button>

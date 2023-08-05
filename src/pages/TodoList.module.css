@@ -1,0 +1,35 @@
+.todolist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+}
+
+.buttons {
+  display: inline-block;
+  margin-left: auto;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  margin: 0.5rem;
+}
+
+.todo {
+  margin: 0.5rem;
+}
+
+.redBtn {
+  color: #800000;
+  margin: 0 0.2rem;
+}
+
+.blueBtn {
+  color: darkblue;
+}

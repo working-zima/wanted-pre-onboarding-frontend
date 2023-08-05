@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import classes from "./TodoForm.module.css";
+
 function TodoForm({ createTodo }) {
   const [text, setText] = useState("");
   const handleChange = (evt) => {
@@ -15,12 +17,15 @@ function TodoForm({ createTodo }) {
     setText("");
   };
   return (
-    <div>
+    <div className={classes.form}>
       <form onSubmit={handleSubmit}>
         <input
           data-testid="new-todo-input"
+          className={classes.input}
           value={text}
           onChange={handleChange}
+          placeholder="내용을 입력해 주세요"
+          autoFocus
         />
         <button data-testid="new-todo-add-button">추가</button>
       </form>

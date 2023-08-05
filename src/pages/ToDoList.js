@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import classes from "./TodoList.module.css";
+
 function TodoList({ todos, toggleTodo, deleteTodo, updateTodo }) {
   const [isEditing, setIsEditing] = useState(null);
   const [editState, setEditState] = useState("");
@@ -26,10 +28,10 @@ function TodoList({ todos, toggleTodo, deleteTodo, updateTodo }) {
     }
   };
   return (
-    <div>
+    <div className={classes.todolist}>
       <ul>
         {todos.map((todo, idx) => (
-          <li key={todo.id}>
+          <li className={classes.list} key={todo.id}>
             <label htmlFor="checkbox"></label>
             <input
               type="checkbox"
@@ -43,34 +45,40 @@ function TodoList({ todos, toggleTodo, deleteTodo, updateTodo }) {
                 value={editState}
                 onChange={handleEditChange}
                 onKeyDown={(evt) => handleKeyDown(evt, todo)}
+                className={classes.input}
+                autoFocus
               />
             ) : (
-              <span>{todo.todo}</span>
+              <span className={classes.todo}>{todo.todo}</span>
             )}
-            <button
-              data-testid={
-                isEditing === idx ? "submit-button" : "modify-button"
-              }
-              onClick={
-                isEditing === idx
-                  ? () => handleEditSubmit(todo)
-                  : () => handleEditClick(idx)
-              }
-            >
-              {isEditing === idx ? `제출` : `수정`}
-            </button>
-            <button
-              data-testid={
-                isEditing === idx ? "cancel-button" : "delete-button"
-              }
-              onClick={
-                isEditing === idx
-                  ? () => handleEditClick(null)
-                  : () => deleteTodo(todo)
-              }
-            >
-              {isEditing === idx ? `취소` : `삭제`}
-            </button>
+            <div className={classes.buttons}>
+              <button
+                data-testid={
+                  isEditing === idx ? "submit-button" : "modify-button"
+                }
+                onClick={
+                  isEditing === idx
+                    ? () => handleEditSubmit(todo)
+                    : () => handleEditClick(idx)
+                }
+                className={classes.blueBtn}
+              >
+                {isEditing === idx ? `제출` : `수정`}
+              </button>
+              <button
+                data-testid={
+                  isEditing === idx ? "cancel-button" : "delete-button"
+                }
+                onClick={
+                  isEditing === idx
+                    ? () => handleEditClick(null)
+                    : () => deleteTodo(todo)
+                }
+                className={classes.redBtn}
+              >
+                {isEditing === idx ? `취소` : `삭제`}
+              </button>
+            </div>
           </li>
         ))}
       </ul>

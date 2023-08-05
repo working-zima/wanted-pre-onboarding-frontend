@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import * as Api from "../api";
+import classes from "./SignInPage.module.css";
 
 function SignInPage() {
   const [formData, setFormData] = useState({
@@ -37,7 +38,9 @@ function SignInPage() {
 
   return (
     <form>
-      <label htmlFor="email">이메일</label>
+      <label htmlFor="email" className={classes.label}>
+        이메일
+      </label>
       <input
         type="text"
         placeholder="이메일을 입력해 주세요"
@@ -47,7 +50,9 @@ function SignInPage() {
         value={formData.email}
         onChange={handleChange}
       />
-      <label htmlFor="password">비밀번호</label>
+      <label htmlFor="password" className={classes.label}>
+        비밀번호
+      </label>
       <input
         type="password"
         placeholder="비밀번호를 입력해 주세요"
@@ -58,7 +63,12 @@ function SignInPage() {
         value={formData.password}
         onChange={handleChange}
       />
-      <button type="submit" data-testid="signin-button" onClick={handleSubmit}>
+      <button
+        type="submit"
+        data-testid="signin-button"
+        onClick={handleSubmit}
+        className={classes.btn}
+      >
         로그인
       </button>
     </form>
