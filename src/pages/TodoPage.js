@@ -45,6 +45,7 @@ function TodoPage() {
     }
   };
 
+  // todo를 삭제합니다.
   const deleteTodo = async (todo) => {
     const id = todo.id;
     try {
@@ -55,10 +56,25 @@ function TodoPage() {
     }
   };
 
+  const updateTodo = async (id, isCompleted, todo) => {
+    try {
+      await Api.put(`todos/${id}`, {
+        todo: todo,
+        isCompleted: isCompleted,
+      });
+      fetchTodos();
+    } catch (err) {}
+  };
+
   return (
     <>
       <TodoForm createTodo={createTodo} />
-      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+      <TodoList
+        todos={todos}
+        toggleTodo={toggleTodo}
+        deleteTodo={deleteTodo}
+        updateTodo={updateTodo}
+      />
     </>
   );
 }

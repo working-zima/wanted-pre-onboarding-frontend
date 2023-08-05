@@ -31,6 +31,7 @@ function SignInPage() {
       navigate("/todo");
     } catch (err) {
       console.log("로그인 실패", err);
+      alert("로그인에 실패하였습니다.");
     }
   };
 

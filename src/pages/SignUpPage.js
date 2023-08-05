@@ -33,6 +33,7 @@ function SignUpPage() {
       navigate("/signin");
     } catch (err) {
       console.log("회원가입 실패", err);
+      alert("회원가입에 실패하였습니다.");
     }
   };
 

@@ -7,6 +7,10 @@ function TodoForm({ createTodo }) {
   };
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    if (!text) {
+      alert("내용을 입력해 주세요");
+      return;
+    }
     createTodo(text);
     setText("");
   };
