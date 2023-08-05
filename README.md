@@ -16,3 +16,7 @@
 https://youtu.be/iOkep3YVkxQ
 
 <br/>
+
+## 배포 링크
+
+https://working-zima.github.io/wanted-pre-onboarding-frontend/
