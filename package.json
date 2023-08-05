@@ -21,7 +21,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://github.com/working-zima/wanted-pre-onboarding-frontend",
+  "homepage": "https://working-zima/wanted-pre-onboarding-frontend/",
   "eslintConfig": {
     "extends": [
       "react-app",
