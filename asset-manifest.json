@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/working-zima/wanted-pre-onboarding-frontend/static/css/main.040da713.css",
-    "main.js": "/working-zima/wanted-pre-onboarding-frontend/static/js/main.edfc4351.js",
-    "index.html": "/working-zima/wanted-pre-onboarding-frontend/index.html",
-    "main.040da713.css.map": "/working-zima/wanted-pre-onboarding-frontend/static/css/main.040da713.css.map",
-    "main.edfc4351.js.map": "/working-zima/wanted-pre-onboarding-frontend/static/js/main.edfc4351.js.map"
+    "main.css": "/wanted-pre-onboarding-frontend/static/css/main.040da713.css",
+    "main.js": "/wanted-pre-onboarding-frontend/static/js/main.fc3bda90.js",
+    "index.html": "/wanted-pre-onboarding-frontend/index.html",
+    "main.040da713.css.map": "/wanted-pre-onboarding-frontend/static/css/main.040da713.css.map",
+    "main.fc3bda90.js.map": "/wanted-pre-onboarding-frontend/static/js/main.fc3bda90.js.map"
   },
   "entrypoints": [
     "static/css/main.040da713.css",
-    "static/js/main.edfc4351.js"
+    "static/js/main.fc3bda90.js"
   ]
 }
