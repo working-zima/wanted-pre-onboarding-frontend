@@ -1,11 +1,11 @@
 import axios from "axios";
 
-// const serverUrl = "https://www.pre-onboarding-selection-task.shop/";
+const serverUrl = "https://www.pre-onboarding-selection-task.shop/";
 
-const devServerUrl = "http://" + window.location.hostname + ":8000/";
+// const devServerUrl = "http://" + window.location.hostname + ":8000/";
 
 async function get(endpoint, params = "") {
-  return axios.get(devServerUrl + endpoint + "/" + params, {
+  return axios.get(serverUrl + endpoint + "/" + params, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("access_token")}`,
     },
@@ -14,7 +14,7 @@ async function get(endpoint, params = "") {
 
 async function post(endpoint, data) {
   const bodyData = JSON.stringify(data);
-  return axios.post(devServerUrl + endpoint, bodyData, {
+  return axios.post(serverUrl + endpoint, bodyData, {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("access_token")}`,
@@ -24,7 +24,7 @@ async function post(endpoint, data) {
 
 async function put(endpoint, data) {
   const bodyData = JSON.stringify(data);
-  return axios.put(devServerUrl + endpoint, bodyData, {
+  return axios.put(serverUrl + endpoint, bodyData, {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("access_token")}`,
@@ -33,7 +33,7 @@ async function put(endpoint, data) {
 }
 
 async function del(endpoint, params = "") {
-  return axios.delete(devServerUrl + endpoint + "/" + params, {
+  return axios.delete(serverUrl + endpoint + "/" + params, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("access_token")}`,
     },
