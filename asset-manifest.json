@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/working-zima/wanted-pre-onboarding-frontend/static/css/main.040da713.css",
-    "main.js": "/working-zima/wanted-pre-onboarding-frontend/static/js/main.fb4bb4ed.js",
+    "main.js": "/working-zima/wanted-pre-onboarding-frontend/static/js/main.584b6236.js",
     "index.html": "/working-zima/wanted-pre-onboarding-frontend/index.html",
     "main.040da713.css.map": "/working-zima/wanted-pre-onboarding-frontend/static/css/main.040da713.css.map",
-    "main.fb4bb4ed.js.map": "/working-zima/wanted-pre-onboarding-frontend/static/js/main.fb4bb4ed.js.map"
+    "main.584b6236.js.map": "/working-zima/wanted-pre-onboarding-frontend/static/js/main.584b6236.js.map"
   },
   "entrypoints": [
     "static/css/main.040da713.css",
-    "static/js/main.fb4bb4ed.js"
+    "static/js/main.584b6236.js"
   ]
 }
